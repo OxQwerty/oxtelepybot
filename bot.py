@@ -3,7 +3,7 @@ import os
 from flask import Flask, request
 import logging
 
-bot = telebot.TeleBot(token)
+bot = telebot.TeleBot("TOKEN")
 
 # Здесь пишем наши хэндлеры
 
@@ -11,7 +11,7 @@ bot = telebot.TeleBot(token)
 def send_echo(message):
 	#bot.reply_to(message, message.text)
 	bot.send_message(message.chat.id, message.text)
-    
+
 # Проверим, есть ли переменная окружения Хероку (как ее добавить смотрите ниже)
 if "HEROKU" in list(os.environ.keys()):
     logger = telebot.logger
