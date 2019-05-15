@@ -3,7 +3,6 @@ import os
 from flask import Flask, request
 import logging
 
-TOKEN = os.environ.get('TOKEN')
 bot = telebot.TeleBot('TOKEN')
 
 # Здесь пишем наши хэндлеры
@@ -26,7 +25,7 @@ if "HEROKU" in list(os.environ.keys()):
     @server.route("/")
     def webhook():
         bot.remove_webhook()
-        bot.set_webhook(url="https://oxtelepybot.herokuapp.com/" + TOKEN) # этот url нужно заменить на url вашего Хероку приложения
+        bot.set_webhook(url="https://oxtelepybot.herokuapp.com/TOKEN") # этот url нужно заменить на url вашего Хероку приложения
         return "?", 200
     server.run(host="0.0.0.0", port=os.environ.get('PORT', 80))
 else:
