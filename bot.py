@@ -52,5 +52,3 @@ if __name__ == '__main__':
     updater.dispatcher.add_handler(CommandHandler("random", random_handler))
 
     run(updater)
-    
-bot.polling(none_stop=True)
