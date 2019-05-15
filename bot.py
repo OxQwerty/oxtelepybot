@@ -3,7 +3,8 @@ import os
 from flask import Flask, request
 import logging
 
-bot = telebot.TeleBot("TOKEN")
+TOKEN = os.environ.get('TOKEN')
+bot = telebot.TeleBot('TOKEN')
 
 # Здесь пишем наши хэндлеры
 
