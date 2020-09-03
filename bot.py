@@ -53,6 +53,6 @@ if __name__ == '__main__':
 
     run(updater)
     
-    @bot.message_handler(commands=['1', '2'])
+    @bot.message_handler(commands=['1', '3'])
 def send_welcome(message):
 	bot.reply_to(message, "Howdy, how are you doing?")
