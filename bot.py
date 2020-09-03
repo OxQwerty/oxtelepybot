@@ -50,7 +50,8 @@ if __name__ == '__main__':
 
     updater.dispatcher.add_handler(CommandHandler("start", start_handler))
     updater.dispatcher.add_handler(CommandHandler("random", random_handler))
-
+    updater.dispatcher.add_handler(CommandHandler("1", send_welcome))
+	
     run(updater)
     
     @bot.message_handler(commands=['1', '3'])
